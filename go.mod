@@ -4,7 +4,7 @@ go 1.24.10
 
 require (
 	github.com/fatih/color v1.18.0
-	github.com/footgod368/translator-sdk v0.0.0-20251122180807-24cd04c3aa84
+	github.com/footgod368/translator-sdk v0.0.0-20251122185817-5309e80e2a93
 	github.com/spf13/cobra v1.10.1
 )
 
