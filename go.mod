@@ -3,6 +3,7 @@ module github.com/footgod368/fy-cli
 go 1.24.10
 
 require (
+	github.com/fatih/color v1.18.0
 	github.com/footgod368/translator-sdk v0.0.0-20251122180807-24cd04c3aa84
 	github.com/spf13/cobra v1.10.1
 )
@@ -10,7 +11,9 @@ require (
 require (
 	github.com/bytedance/gg v1.1.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/mattn/go-colorable v0.1.13 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/spf13/pflag v1.0.9 // indirect
-	golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
+	golang.org/x/sys v0.25.0 // indirect
 )
