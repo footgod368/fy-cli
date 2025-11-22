@@ -4,6 +4,7 @@ Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"github.com/footgod368/fy-cli/internal/cmd/common"
 	"github.com/footgod368/fy-cli/internal/cmd/root"
 	"os"
 
@@ -21,6 +22,9 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Args: cobra.MinimumNArgs(1),
+	PreRunE: func(cmd *cobra.Command, args []string) error {
+		return root.PreRunE(args)
+	},
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return root.RunE(args)
 	},
@@ -44,5 +48,5 @@ func init() {
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.PersistentFlags().BoolVarP(&common.Verbose, "verbose", "v", false, "Verbose mode")
 }
