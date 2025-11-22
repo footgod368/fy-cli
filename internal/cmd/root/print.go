@@ -36,7 +36,7 @@ func printResult(sourceText string, resp *youdao.TranslateResponse) {
 			fmt.Printf("%d. %s\n%s\n", i+1, egSentence.Sentence, egSentence.Translation)
 		}
 	}
-	if len(resp.Discrimination) > 0 {
+	if Discriminate && len(resp.Discrimination) > 0 {
 		color.Blue("辨析：")
 		for i, discriminateUsage := range resp.Discrimination {
 			color.Blue("%d. %s\n%s\n", i+1, discriminateUsage.Headword, discriminateUsage.Usage)

@@ -49,4 +49,5 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.PersistentFlags().BoolVarP(&common.Verbose, "verbose", "v", false, "Verbose mode")
+	rootCmd.Flags().BoolVarP(&root.Discriminate, "discriminate", "d", false, "Discriminate words")
 }

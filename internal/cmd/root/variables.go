@@ -1,3 +1,5 @@
 package root
 
-var ()
+var (
+	Discriminate bool
+)
