@@ -24,7 +24,6 @@ to quickly create a Cobra application.`,
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return root.Complete(toComplete)
 	},
-	Args: cobra.MinimumNArgs(1),
 	PreRunE: func(cmd *cobra.Command, args []string) error {
 		return root.PreRunE(args)
 	},
@@ -53,4 +52,5 @@ func init() {
 	// when this action is called directly.
 	rootCmd.PersistentFlags().BoolVarP(&common.Verbose, "verbose", "v", false, "Verbose mode")
 	rootCmd.Flags().BoolVarP(&root.Discriminate, "discriminate", "d", false, "Discriminate words")
+	rootCmd.Flags().StringVarP(&root.Query, "query", "q", "", "Query words")
 }

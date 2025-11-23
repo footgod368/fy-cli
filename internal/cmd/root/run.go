@@ -2,6 +2,7 @@ package root
 
 import (
 	"context"
+	"fmt"
 	"github.com/footgod368/fy-cli/internal/cmd/common"
 	"github.com/footgod368/fy-cli/utils"
 	youdao "github.com/footgod368/translator-sdk"
@@ -25,6 +26,12 @@ func PreRunE(args []string) error {
 func RunE(args []string) error {
 	ctx := context.Background()
 	sourceText := strings.Join(args, " ")
+	if Query != "" {
+		sourceText = Query
+	}
+	if sourceText == "" {
+		return fmt.Errorf("source text is empty")
+	}
 	resp, err := youdao.Query(ctx, sourceText)
 	if err != nil {
 		return err
